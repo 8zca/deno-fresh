@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
-import Counter from '../islands/Counter.tsx';
+import { Button } from '/components/index.ts';
+import Counter from '/islands/Counter.tsx';
 
 // 基本的にサーバでレンダリングされる
 // 個別にクライアントでレンダリングする部分のみislandsに配置するアーキテクチャ
@@ -14,11 +15,10 @@ export default function Home() {
         height='100px'
         alt='the fresh logo: a sliced lemon dripping with juice'
       />
-      <p>
-        Welcome to `fresh`. Try update this message in the ./routes/index.tsx
-        file, and refresh!?
-      </p>
+
       <Counter start={3} />
+
+      <Button clcikHandler={() => console.log(1)} text='server-rendered button' />
     </div>
   );
 }
