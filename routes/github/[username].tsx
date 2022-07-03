@@ -1,6 +1,6 @@
 /** @jsx h */
-import { h } from "preact";
-import { Handlers, PageProps } from "$fresh/server.ts";
+import { h } from 'preact';
+import { Handlers, PageProps } from '$fresh/server.ts';
 
 interface User {
   login: string;
@@ -20,7 +20,7 @@ export const handler: Handlers<User | null> = {
   },
 };
 
-// data キーは固定. 
+// data キーは固定.
 // fetch失敗時はrender(null)をセットしているのでUserかnullのいずれかが来る
 export default function Page({ data }: PageProps<User | null>) {
   if (!data) {
